@@ -22,8 +22,29 @@ composer require himelali/pdf-generator
 ```
 
 ## ⚙️ Configuration
-Publish the configuration file:
 
+### 🧪 Laravel Version Compatibility
+
+Depending on your Laravel version, register the service provider as follows:
+
+#### Laravel 11+
+
+Edit `bootstrap/providers.php`:
+
+```php
+return [
+    // Other providers...
+    \Himelali\PdfGenerator\PdfServiceProvider::class,
+];
+```
+#### Laravel 10 and below
+```php
+'providers' => [
+    // Other providers...
+    \Himelali\PdfGenerator\PdfServiceProvider::class,
+],
+```
+#### The service provider will register the PDF manager and allow you to publish the config file using:
 ```bash
 php artisan vendor:publish --tag=config
 ```
@@ -75,12 +96,12 @@ return [
 
 ## 🧩 Supported Drivers
 
-| Driver | Package Dependency                          | Binary Required |
-| ------ | ------------------------------------------- | --------------- |
-| dompdf | `dompdf/dompdf`                             | ❌               |
-| snappy | `knplabs/knp-snappy` + `wkhtmltopdf` binary | ✅               |
-| mpdf   | `mpdf/mpdf`                                 | ❌               |
-| fpdf   | `setasign/fpdf`                             | ❌               |
+| Driver | Package Dependency                                   | Binary Required |
+| ------ |------------------------------------------------------| --------------- |
+| dompdf | `dompdf/dompdf`                                      | ❌               |
+| snappy | `knplabs/knp-snappy` + `wkhtmltopdf` binary [link](https://github.com/KnpLabs/snappy) | ✅               |
+| mpdf   | `mpdf/mpdf`                                          | ❌               |
+| fpdf   | `setasign/fpdf`                                      | ❌               |
 
 
 Install the required dependencies based on your driver.
@@ -123,18 +144,18 @@ Pdf::driver('custom')->loadHtml('<h1>Custom Driver</h1>')->download();
 ```
 
 ## ❗Exceptions
-| Exception Class           | When it’s Thrown                         |
-| ------------------------- | ---------------------------------------- |
-| `BinaryNotFoundException` | wkhtmltopdf binary missing (Snappy only) |
-| `InvalidDriverException`  | Driver not found in config or map        |
-| `PdfGenerationException`  | General rendering failure                |
-| `RenderException`         | Library-specific render issues           |
+| Exception Class           | When it’s Thrown                                                     |
+| ------------------------- |----------------------------------------------------------------------|
+| `BinaryNotFoundException` | [wkhtmltopdf](https://wkhtmltopdf.org/) binary missing (Snappy only) |
+| `InvalidDriverException`  | Driver not found in config or map                                    |
+| `PdfGenerationException`  | General rendering failure                                            |
+| `RenderException`         | Library-specific render issues                                       |
 
 
 ## ✅ Requirements
 - Laravel 6+
 - PHP 7.1 or higher
-- At least one supported PDF library installed (dompdf, mpdf, knplabs/knp-snappy, or setasign/fpdf)
+- At least one supported PDF library installed ([dompdf](https://dompdf.github.io), [mpdf](https://mpdf.github.io), [knplabs/knp-snappy](https://github.com/KnpLabs/snappy), or [setasign/fpdf](https://www.fpdf.org/))
 
 ## 📖 License
 
