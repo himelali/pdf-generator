@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Facade as BaseFacade;
  * @method static \Himelali\PdfGenerator\Contracts\PdfDriverInterface loadHTML($string, $encoding = null)
  * @method static \Himelali\PdfGenerator\Contracts\PdfDriverInterface download($filename = 'document.pdf')
  * @method static \Himelali\PdfGenerator\Contracts\PdfDriverInterface stream($filename = 'document.pdf')
- *
+ * @method static \Himelali\PdfGenerator\Contracts\PdfDriverInterface driver($driver = null)
  */
 class Pdf extends BaseFacade
 {

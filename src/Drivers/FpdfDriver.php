@@ -40,7 +40,7 @@ class FpdfDriver extends FPDF implements PdfDriverInterface
 
     public function setMargins($top = 10, $right = 10, $bottom = 10, $left = 10)
     {
-        $this->SetMargins($left, $top, $right);
+        parent::SetMargins($left, $top, $right);
         $this->SetAutoPageBreak(true, $bottom);
         $this->margins = compact('top', 'right', 'bottom', 'left');
 

@@ -7,6 +7,7 @@ use Himelali\PdfGenerator\Contracts\PdfDriverInterface;
 use Himelali\PdfGenerator\Exceptions\BinaryNotFoundException;
 use Himelali\PdfGenerator\Exceptions\PdfGenerationException;
 use Himelali\PdfGenerator\Exceptions\RenderException;
+use Illuminate\Support\Facades\File;
 use Knp\Snappy\Pdf;
 
 class SnappyDriver implements PdfDriverInterface
@@ -26,13 +27,13 @@ class SnappyDriver implements PdfDriverInterface
      */
     public function __construct()
     {
-        $binaryPath = config('snappy.pdf.binary');
-        if (!file_exists($binaryPath) || !is_executable($binaryPath)) {
+        $binary_path = config('pdf-generator.drivers.snappy.binary');
+        if (! File::exists($binary_path)) {
             throw new BinaryNotFoundException('Snappy');
         }
 
         try {
-            $this->snappy = new Pdf($binaryPath);
+            $this->snappy = new Pdf($binary_path);
         } catch (Exception $e) {
             throw new PdfGenerationException('Failed to initialize Snappy PDF driver: ' . $e->getMessage());
         }
