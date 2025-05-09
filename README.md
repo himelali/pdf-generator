@@ -6,9 +6,7 @@
 </p>
 
 # 📄 PdfGenerator for Laravel
-
 PdfGenerator is a flexible and extensible PDF generation wrapper for Laravel that supports multiple drivers including **DomPDF**, **Snappy (wkhtmltopdf)**, **mPDF**, and **FPDF** — all with a unified interface.
-
 ---
 
 ## 🚀 Features
