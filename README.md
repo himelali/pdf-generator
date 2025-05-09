@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/packagist/dt/himelali/pdf-generator" alt="Total Downloads"/>
+  <img src="https://img.shields.io/github/license/himelali/pdf-generator" alt="License"/>
+  <img src="https://img.shields.io/github/stars/himelali/pdf-generator" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/himelali/pdf-generator" alt="Forks"/>
+</p>
+
 # 📄 PdfGenerator for Laravel
 
 PdfGenerator is a flexible and extensible PDF generation wrapper for Laravel that supports multiple drivers including **DomPDF**, **Snappy (wkhtmltopdf)**, **mPDF**, and **FPDF** — all with a unified interface.
