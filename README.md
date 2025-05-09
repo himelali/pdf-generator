@@ -157,6 +157,15 @@ Pdf::driver('custom')->loadHtml('<h1>Custom Driver</h1>')->download();
 - PHP 7.1 or higher
 - At least one supported PDF library installed ([dompdf](https://dompdf.github.io), [mpdf](https://mpdf.github.io), [knplabs/knp-snappy](https://github.com/KnpLabs/snappy), or [setasign/fpdf](https://www.fpdf.org/))
 
-## 📖 License
+## License
 
-This package is open-sourced software licensed under the MIT license.
+This package is open-sourced software licensed under the [MIT license](LICENSE.txt).
+
+Please note: This is a wrapper around the following libraries, each of which is maintained under its own license:
+
+- [dompdf/dompdf](https://github.com/dompdf/dompdf) – [LGPL-2.1-only](https://github.com/dompdf/dompdf/blob/master/LICENSE.LGPL)
+- [mpdf/mpdf](https://github.com/mpdf/mpdf) – [GNU GPL v2](https://github.com/mpdf/mpdf/blob/development/LICENSE.txt)
+- [knplabs/knp-snappy](https://github.com/KnpLabs/KnpSnappy) – [MIT License](https://github.com/KnpLabs/KnpSnappy/blob/master/LICENSE)
+- [setasign/fpdf](http://www.fpdf.org/) – [Free to use, non-copyleft](http://www.fpdf.org/)
+
+Make sure to review and comply with each library’s license if you use this package in your projects.
