@@ -44,6 +44,20 @@ return [
     \Himelali\PdfGenerator\PdfServiceProvider::class,
 ],
 ```
+For older versions, register the alias manually in `config/app.php`:
+```php
+'aliases' => Facade::defaultAliases()->merge([
+    'Pdf' => Himelali\PdfGenerator\Facades\Pdf::class,
+])->toArray(),
+```
+⚠️ If Facade::defaultAliases() doesn't exist in your Laravel version, just use:
+```php
+'aliases' => [
+    // Other aliases...
+    'Pdf' => Himelali\PdfGenerator\Facades\Pdf::class,
+],
+```
+
 #### The service provider will register the PDF manager and allow you to publish the config file using:
 ```bash
 php artisan vendor:publish --tag=config
