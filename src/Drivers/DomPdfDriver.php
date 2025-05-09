@@ -8,7 +8,6 @@ use Exception;
 use Himelali\PdfGenerator\Contracts\PdfDriverInterface;
 use Himelali\PdfGenerator\Exceptions\PdfGenerationException;
 use Himelali\PdfGenerator\Exceptions\RenderException;
-use Throwable;
 
 class DomPdfDriver implements PdfDriverInterface
 {

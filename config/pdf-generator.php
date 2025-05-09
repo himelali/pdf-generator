@@ -59,7 +59,7 @@ return [
             'margin_bottom' => 10,
             'margin_left' => 10,
             'margin_right' => 10,
-            'temp_dir' => storage_path('app/mpdf/temp'),
+            'temp_dir' => storage_path('app/pdf/temp'),
             'font_dir' => storage_path('app/pdf/fonts'),
             'default_font' => 'dejavusans',
             'default_font_size' => 12,
